@@ -2,7 +2,7 @@
 # Contributor: Dino Hensen <dino.hensen@gmail.com>
 
 pkgver=0.67
-pkgrel=1
+pkgrel=2
 pkgname=telepresence
 pkgdesc="Local development against a remote Kubernetes or OpenShift cluster - http://www.telepresence.io"
 arch=('any')
@@ -25,11 +25,12 @@ md5sums=('SKIP')
 
 build(){
   cd "${srcdir}/${pkgname}-${pkgver}"
-  make virtualenv/bin/sshuttle-telepresence
+  make setup
 }
 
 package(){
   install -Dm 755 "${srcdir}/${pkgname}-${pkgver}/cli/telepresence" "${pkgdir}/usr/bin/telepresence"
+  install -Dm 755 "${srcdir}/${pkgname}-${pkgver}/cli/stamp-telepresence" "${pkgdir}/usr/bin/stamp-telepresence"
   install -Dm 755 "${srcdir}/${pkgname}-${pkgver}/virtualenv/bin/sshuttle-telepresence" "${pkgdir}/usr/bin/sshuttle-telepresence"
 }
 
