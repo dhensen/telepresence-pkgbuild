@@ -1,8 +1,8 @@
 # Maintainer: David Stark <david@starkers.org>
 # Contributor: Dino Hensen <dino.hensen@gmail.com>
 
-pkgver=0.67
-pkgrel=2
+pkgver=0.71
+pkgrel=1
 pkgname=telepresence
 pkgdesc="Local development against a remote Kubernetes or OpenShift cluster - http://www.telepresence.io"
 arch=('any')
